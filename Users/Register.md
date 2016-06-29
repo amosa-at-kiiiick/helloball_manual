@@ -1,4 +1,4 @@
-# 會員註冊
+# /users/register 會員註冊
 Reserve URI 預定路徑：	 **`/users/register`**
 
 Premission 權限： **`All groups`**
@@ -32,16 +32,52 @@ version 版本號：**`v1.0.0+`**
  
  
 ## 事件內容
-#### 已登入偵測
+#### [#](#event1) 已登入偵測 
 *觸發條件*：當使用者在已登入的身份，拜訪 `/users/register`
 
 *觸發內容*：將會提示使用者訊息目前身份已登入 [`(lang:user:already_logged_in)`](http://slug.helloball.com/#user:already_logged_in)  ，並將使用者導向首頁 `/home`。
 
 ---
-#### 偵測機器人註冊
+
+#### [#](#event2) 偵測機器人註冊 
 *觸發條件*：當使用者送出註冊表單時，檢查隱藏碼以判斷是操作者是否為機器人
 
 *觸發內容*：如判斷為機器人，則告知目前操作者 操作錯誤 [`(lang:user:register_error)`](http://slug.helloball.com/#user:register_error)  ，並將使用者導向首頁 `/users/login`。
 
+---
 
+#### [#](#event3) 註冊資料成功 
+*觸發條件*：當使用者送出註冊表單時，表單驗證皆完成
+
+*觸發內容*：將資料正式輸入資料庫，並且發送一封帳號啟動信件給使用者，目前使用者身份為未啟動狀態，任然無法使用帳號密碼登入網站使用。
+
+*信件主旨*：[`lang:subject_activation`](http://slug.helloball.com/#subject_activation)
+
+*信件內容*：
+> `var:username` 您好
+>
+> 感謝您註冊 `var:site_name` 會員，在完成您的註冊流程前， 
+> 請先完成以下的帳號啟用步驟，確認是否為您本人的電子信箱。 
+>
+> > `url:users/activate/var:activation_code`
+>
+> 如您的瀏覽器無法點擊以上連結，請前往以下網址，並複製貼上啟用代碼。 
+>
+> > `url:users/activate`
+> 
+> 啟用碼：`var:activation_code;
+
+---
+
+#### [#](#event4) 註冊資料有誤
+*觸發條件*： ___TODO___
+
+*觸發內容*： ___TODO___
+
+---
+
+#### [#](#event5) 註冊碼驗證成功
+*觸發條件*： ___TODO___
+
+*觸發內容*： 轉址到 `users/activated`， 請參照頁面 [`users/activate`](#users/activate)
 
