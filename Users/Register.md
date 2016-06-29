@@ -27,11 +27,21 @@ version 版本號：**`v1.0.0+`**
 --- | --- | --- | --- | --- | --- |
 信箱 | email | 電子信箱位置，也代表為會員的登入帳號 | Y | Y | 基本Email邏輯字串驗證
 密碼 | password | 會員的登入密碼 | Y |  | 密碼字元允許為英數字半形組合，長度為6-20字元，註冊畫面中將會對應一組確認密碼(password conf)欄位用來核對密碼是否輸入正確
+系統帳號| username | username為系統內部操作用的會員代號ID | Y | Y |將會使用會員註冊Email帳號的@前字串當作內容，如與系統已存的username有相同者，會自動在尾碼加上流水號數字作為區別
 電話 | phone | 聯絡電話號碼 | | | 
+ 
+ 
+## 事件內容
+#### 已登入偵測
+*觸發條件*：當使用者在已登入的身份，拜訪 `/users/register`
 
-## 事件
-### 已登入偵測
-觸發條件：當使用者在已登入的身份，拜訪 `/users/register`
-觸發內容：將會提示使用者訊息鍵詞[`user:already_logged_in`]，並將使用者導向首頁`/home`
+*觸發內容*：將會提示使用者訊息目前身份已登入 [`(lang:user:already_logged_in)`](http://slug.helloball.com/#user:already_logged_in)  ，並將使用者導向首頁 `/home`。
+
+---
+#### 偵測機器人註冊
+*觸發條件*：當使用者送出註冊表單時，檢查隱藏碼以判斷是操作者是否為機器人
+
+*觸發內容*：如判斷為機器人，則告知目前操作者 操作錯誤 [`(lang:user:register_error)`](http://slug.helloball.com/#user:register_error)  ，並將使用者導向首頁 `/users/login`。
+
 
 
