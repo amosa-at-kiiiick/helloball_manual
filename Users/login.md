@@ -47,7 +47,7 @@
 *觸發內容*：系統將顯示帳號尚未啟動的提示訊息[`(lang:user:inactive)`](../users/language/english.md#user:inactive)，並導向登入頁([`/users/login`](../users/login.md))。
 
 ## 相關參照文件
-- [`/users/register`](../users/register.md) 會員啟動
-- [`/users/login`](../users/login.md) 會員登入
+- [`/users/register`](../users/register.md) 會員註冊
+- [`/users/activate`](../users/activate.md) 會員啟動
 - [`/users/reset_pass`](../users/reset_pass.md) 忘記與重設密碼
 - [`/users/reset_complete`](../users/reset_complete.md) 忘記與重設密碼
