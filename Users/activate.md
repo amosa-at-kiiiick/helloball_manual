@@ -1,7 +1,7 @@
 # [`/users/activate`](../users/activate.md) 會員帳號啟動
 - Reserve URI 預定路徑：	 [`/users/activate`](../users/activate.md)
 - Premission 權限： `All groups`
-- version 版本號：`v1.0.0+`
+- System版本號：`v1.0.0+`
 
 ## 敘述
 會員註冊完成後，將會產生一串雜湊碼作為該帳號的啟動碼，連同啟動信件一並寄送至使用者信箱，使用者必須透過會員啟動信件中的連結啟動碼，進行帳號啟動認證的步驟。藉此步驟可驗證使用者信箱的正確性，及確認使用者信箱可正常收取由網站系統發送的電子信件。
@@ -35,11 +35,16 @@
  
 ## 事件內容
 ### 當 帳號啟動成功 
-*觸發條件*：當使用者輸入或透過啟動連結輸入正確的帳號啟動碼
+*觸發條件*：當使用者輸入或透過啟動連結輸入了正確的`帳號啟動碼`
 
 *觸發內容*：系統將會自動啟用該使用者帳號，正式變成有效會員，並顯示啟動成功的提示訊息[`(lang:activate_successful)`](../users/language/english.md#activate_successful)  ，並將使用者導向登入頁面 [`/users/login`](../users/login.md)。
 
 *觸發外掛事件*： [`Events::trigger('post_user_activation')`](../events.md#post_user_activation)
+
+### 當 帳號啟動失敗
+*觸發條件*：當使用者輸入或透過啟動連結輸入了錯誤的`帳號啟動碼`
+
+*觸發內容*：系統將會顯示啟動錯誤的提示訊息[`(lang:activate_unsuccessful)`](../users/language/english.md#activate_unsuccessful)  ，並將使用者導向登入頁面 [`/users/login`](../users/login.md)。
 
 
 ## 相關參照文件
