@@ -13,7 +13,7 @@
 	- Ａ1-Y：一些流程圖中的敘述，情們子錢少不飛的血那請。
 	- Ａ1-N：一些流程圖中的敘述，那入人當發坐南。
 
-- **Ａ2**：一些流程圖中的敘述。參照 [`/users/activated`](../users/activated.md)
+- **Ａ2**：一些流程圖中的敘述。參照 [`/users/activate`](../users/activate.md)
 
 - **Ａ2**：一些流程圖中的敘述，那入人當發坐南
 
@@ -71,15 +71,8 @@
 *觸發內容*： ___TODO___
 
 
-
-### 當註冊啟動碼 驗證成功
-*觸發條件*： ___TODO___
-
-*觸發內容*： 轉址到 [`/users/activated`](../users/activate.md)， 請參照頁面 [`/users/activate`](../users/activate.md)
-
 ## 相關參照文件
 - [`/users/activate`](../users/activate.md) 會員啟動
-- [`/users/activated`](../users/activated.md) 會員啟動成功
 - [`/users/login`](../users/login.md) 會員登入
 - [`/users/reset_pass`](../users/reset_pass.md) 忘記與重設密碼
 - [`/users/reset_complete`](../users/reset_complete.md) 忘記與重設密碼
